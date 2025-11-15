@@ -4,12 +4,20 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import BilanDefinition from "./pages/BilanDefinition";
+import ApprocheIA from "./pages/ApprocheIA";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/bilan-de-competences/definition"} component={BilanDefinition} />
+      <Route path={"/bilan-de-competences/approche-ia"} component={ApprocheIA} />
+      <Route path={"/contact"} component={Contact} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -31,7 +39,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          <Header />
           <Router />
+          <Footer />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

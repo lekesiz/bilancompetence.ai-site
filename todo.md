@@ -10,18 +10,18 @@
 ## Phase 2: Ana Sayfa ve Navigasyon Yapısı
 - [x] Header komponenti (navigasyon menüsü)
 - [x] Footer komponenti (5 kolon yapısı)
-- [ ] Ana sayfa Hero section
-- [ ] Sosyal kanıt bölümü (istatistikler)
-- [ ] "Neden Biz?" bölümü (4 kart)
-- [ ] Metodoloji özeti
+- [x] Ana sayfa Hero section
+- [x] Sosyal kanıt bölümü (istatistikler)
+- [x] "Neden Biz?" bölümü (4 kart)
+- [x] Metodoloji özeti
 - [ ] Hedef kitle bölümü
 - [ ] Testimonials slider
 - [ ] Blog özeti
 - [ ] CTA bölümleri
 
 ## Phase 3: Bilan de Compétences İçerik Sayfaları
-- [ ] /bilan-de-competences/definition sayfası
-- [ ] /bilan-de-competences/approche-ia sayfası
+- [x] /bilan-de-competences/definition sayfası
+- [x] /bilan-de-competences/approche-ia sayfası
 - [ ] /bilan-de-competences/recherche sayfası
 - [ ] /methodologie sayfası
 
@@ -38,7 +38,7 @@
 - [ ] /blog/[slug] detay sayfası
 - [ ] Blog içerik entegrasyonu (3 makale)
 - [ ] /expertise-alsace sayfası
-- [ ] /contact sayfası (form)
+- [x] /contact sayfası (form)
 
 ## Phase 6: SEO Optimizasyonu ve Son Dokunuşlar
 - [ ] Meta tags (title, description) tüm sayfalar
