@@ -15,6 +15,8 @@ import Tarifs from "./pages/Tarifs";
 import MentionsLegales from "./pages/MentionsLegales";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Confidentialite from "./pages/Confidentialite";
+import CGV from "./pages/CGV";
 
 function Router() {
   return (
@@ -28,6 +30,8 @@ function Router() {
       <Route path={"/mentions-legales"} component={MentionsLegales} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/blog/:slug"} component={BlogPost} />
+      <Route path={"/confidentialite"} component={Confidentialite} />
+      <Route path={"/cgv"} component={CGV} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -30,8 +30,8 @@
 - [ ] /financement/autres-aides sayfası
 - [x] /financement/tarifs sayfası (3 pricing card)
 - [x] /mentions-legales sayfası
-- [ ] /confidentialite sayfası
-- [ ] /cgv sayfası
+- [x] /confidentialite sayfası
+- [x] /cgv sayfası
 
 ## Phase 5: Blog Sistemi ve Yerel Uzmanlık Sayfası
 - [x] /blog liste sayfası
