@@ -26,10 +26,10 @@
 - [ ] /methodologie sayfası
 
 ## Phase 4: Finansman Sayfaları ve Yasal Metinler
-- [ ] /financement/cpf sayfası
+- [x] /financement/cpf sayfası
 - [ ] /financement/autres-aides sayfası
-- [ ] /financement/tarifs sayfası (3 pricing card)
-- [ ] /mentions-legales sayfası
+- [x] /financement/tarifs sayfası (3 pricing card)
+- [x] /mentions-legales sayfası
 - [ ] /confidentialite sayfası
 - [ ] /cgv sayfası
 

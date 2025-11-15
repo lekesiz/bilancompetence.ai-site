@@ -10,6 +10,9 @@ import Home from "./pages/Home";
 import BilanDefinition from "./pages/BilanDefinition";
 import ApprocheIA from "./pages/ApprocheIA";
 import Contact from "./pages/Contact";
+import FinancementCPF from "./pages/FinancementCPF";
+import Tarifs from "./pages/Tarifs";
+import MentionsLegales from "./pages/MentionsLegales";
 
 function Router() {
   return (
@@ -18,6 +21,9 @@ function Router() {
       <Route path={"/bilan-de-competences/definition"} component={BilanDefinition} />
       <Route path={"/bilan-de-competences/approche-ia"} component={ApprocheIA} />
       <Route path={"/contact"} component={Contact} />
+      <Route path={"/financement/cpf"} component={FinancementCPF} />
+      <Route path={"/financement/tarifs"} component={Tarifs} />
+      <Route path={"/mentions-legales"} component={MentionsLegales} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
