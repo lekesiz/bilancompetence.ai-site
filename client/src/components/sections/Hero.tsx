@@ -9,22 +9,22 @@ export default function Hero() {
         <div className="mx-auto max-w-4xl text-center">
           {/* Main Heading */}
           <h1 className="mb-6 font-serif text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            Yapay Zeka Destekli{" "}
-            <span className="gradient-text">Bilan de Compétences</span> ile
-            Kariyerinize Alsace'da Yeni Bir Yön Verin
+            <span className="gradient-text">Bilan de Compétences</span> Nouvelle
+            Génération avec Intelligence Artificielle en Alsace
           </h1>
 
           {/* Subheading */}
           <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-            Yeteneklerinizi keşfedin, potansiyelinizi ortaya çıkarın ve size en
-            uygun kariyer yolunu bilimsel metodoloji ve yerel uzmanlıkla çizin.
+            Révélez vos talents cachés, exploitez votre plein potentiel et
+            tracez votre parcours professionnel idéal grâce à une méthodologie
+            scientifique et une expertise locale reconnue.
           </p>
 
           {/* CTA Buttons */}
           <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="w-full sm:w-auto">
               <Link href="/contact?source=hero">
-                Ücretsiz Ön Görüşme Randevusu Alın
+                Demander un Entretien Gratuit
               </Link>
             </Button>
             <Button
@@ -33,7 +33,7 @@ export default function Hero() {
               variant="outline"
               className="w-full sm:w-auto"
             >
-              <Link href="/financement/cpf">CPF Uygunluğumu Sorgula</Link>
+              <Link href="/financement/cpf">Vérifier mon Éligibilité CPF</Link>
             </Button>
           </div>
 
@@ -46,11 +46,11 @@ export default function Hero() {
                 </div>
               </div>
               <h3 className="mb-2 font-serif text-lg font-semibold">
-                AI Destekli Analiz
+                Analyse Assistée par IA
               </h3>
               <p className="text-sm text-muted-foreground">
-                Gizli potansiyelinizi ortaya çıkaran, tarafsız ve derinlemesine
-                bir yetkinlik analizi.
+                Une évaluation approfondie et objective de vos compétences qui
+                révèle votre potentiel caché.
               </p>
             </div>
 
@@ -61,11 +61,11 @@ export default function Hero() {
                 </div>
               </div>
               <h3 className="mb-2 font-serif text-lg font-semibold">
-                Sertifikalı Danışmanlar
+                Consultants Certifiés
               </h3>
               <p className="text-sm text-muted-foreground">
-                Alsace pazarını tanıyan, size özel destek sunan deneyimli
-                kariyer uzmanları.
+                Des experts en carrière expérimentés qui connaissent le marché
+                alsacien et vous offrent un accompagnement personnalisé.
               </p>
             </div>
 
@@ -76,11 +76,11 @@ export default function Hero() {
                 </div>
               </div>
               <h3 className="mb-2 font-serif text-lg font-semibold">
-                CPF ile %100 Finansman
+                Financement CPF à 100%
               </h3>
               <p className="text-sm text-muted-foreground">
-                Kariyer yatırımınızı devlet desteğiyle, cebinizden para
-                çıkmadan gerçekleştirin.
+                Investissez dans votre carrière avec le soutien de l'État, sans
+                débourser un centime de votre poche.
               </p>
             </div>
           </div>

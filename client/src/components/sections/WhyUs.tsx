@@ -6,30 +6,30 @@ export default function WhyUs() {
   const features = [
     {
       icon: Sparkles,
-      title: "Yapay Zeka ile Güçlendirilmiş",
+      title: "Boosté par l'Intelligence Artificielle",
       description:
-        "DeepSeek AI teknolojisi ile CV'niz, test sonuçlarınız ve notlarınız derinlemesine analiz edilir. Beklenmedik kariyer yolları ve niş sektör önerileri keşfedin.",
+        "Grâce à la technologie DeepSeek AI, votre CV, vos résultats de tests et vos notes sont analysés en profondeur. Découvrez des parcours professionnels inattendus et des recommandations de niches sectorielles.",
       link: "/bilan-de-competences/approche-ia",
     },
     {
       icon: MapPin,
-      title: "Alsace Pazarı Uzmanlığı",
+      title: "Expertise du Marché Alsacien",
       description:
-        "Strasbourg, Mulhouse, Colmar ve tüm Grand-Est bölgesindeki iş fırsatlarını, şirketleri ve sektörel trendleri ilk elden biliyoruz. Projeniz yerel gerçeklere dayanır.",
+        "Nous connaissons de première main les opportunités d'emploi, les entreprises et les tendances sectorielles à Strasbourg, Mulhouse, Colmar et dans toute la région Grand-Est. Votre projet s'appuie sur des réalités locales.",
       link: "/expertise-alsace",
     },
     {
       icon: Award,
-      title: "Akademik Temelli Metodoloji",
+      title: "Méthodologie Fondée sur la Recherche",
       description:
-        "Uluslararası kariyer gelişimi araştırmalarına dayanan, bilimsel olarak kanıtlanmış yöntemlerle çalışıyoruz. Sadece sezgi değil, veri ve bilim.",
+        "Nous travaillons avec des méthodes scientifiquement prouvées, basées sur la recherche internationale en développement de carrière. Pas seulement de l'intuition, mais des données et de la science.",
       link: "/bilan-de-competences/recherche",
     },
     {
       icon: TrendingUp,
-      title: "Sonuç Odaklı Yaklaşım",
+      title: "Approche Axée sur les Résultats",
       description:
-        "Amacımız sadece bir rapor vermek değil, sizi somut bir eylem planıyla donatmak. 6 aylık takip görüşmesi ile hedeflerinize ulaşmanızı sağlıyoruz.",
+        "Notre objectif n'est pas seulement de vous remettre un rapport, mais de vous équiper d'un plan d'action concret. Avec un entretien de suivi à 6 mois, nous vous aidons à atteindre vos objectifs.",
       link: "/methodologie",
     },
   ];
@@ -39,12 +39,13 @@ export default function WhyUs() {
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl lg:text-5xl">
-            Neden{" "}
-            <span className="gradient-text">bilancompetence.ai</span>?
+            Pourquoi{" "}
+            <span className="gradient-text">bilancompetence.ai</span> ?
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Teknoloji, yerel uzmanlık ve bilimsel metodolojinin buluştuğu
-            noktada, size özel kariyer çözümleri sunuyoruz.
+            À l'intersection de la technologie, de l'expertise locale et de la
+            méthodologie scientifique, nous vous proposons des solutions de
+            carrière sur mesure.
           </p>
         </div>
 

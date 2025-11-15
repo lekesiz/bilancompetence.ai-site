@@ -8,7 +8,16 @@ export const APP_LOGO = "/logo.svg";
 export const COMPANY_NAME = "Netz Informatique";
 export const COMPANY_PHONE = "+33 3 67 31 02 01";
 export const COMPANY_EMAIL = "contact@netzinformatique.fr";
-export const COMPANY_ADDRESS = "1 Rue de la Laiterie, 67500 HAGUENAU, France";
+export const COMPANY_ADDRESS = "1a Route de Schweighouse, 67500 Haguenau, France";
+export const COMPANY_LEGAL_FORM = "SASU (Société par actions simplifiée à associé unique)";
+export const COMPANY_CAPITAL = "1 000,00 €";
+export const COMPANY_SIREN = "818 347 346";
+export const COMPANY_RCS = "Strasbourg B 818 347 346";
+export const COMPANY_TVA = "FR44818347346";
+export const COMPANY_DIRECTOR = "Mikail Lekesiz";
+export const COMPANY_DIRECTOR_TITLE = "Président";
+export const BUSINESS_HOURS = "Lun-Sam: 09:00-12:00 / 14:00-18:00";
+export const CERTIFICATIONS = { qualiopi: true, datadock: true };
 
 // Social links
 export const SOCIAL_LINKS = {

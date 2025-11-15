@@ -40,12 +40,13 @@ export default function CTA({ variant = "default" }: CTAProps) {
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl lg:text-5xl">
-            Kariyerinizin Kontrolünü Elinize Alın
+            Prenez le Contrôle de Votre Carrière
           </h2>
           <p className="mb-8 text-lg text-primary-foreground/90">
-            Ücretsiz ön görüşmemizde, hedeflerinizi dinler, size en uygun
-            programı önerir ve tüm sorularınızı yanıtlarız. Hiçbir bağlayıcılık
-            yok, sadece samimi bir kariyer sohbeti.
+            Lors de notre entretien préliminaire gratuit, nous écoutons vos
+            objectifs, vous proposons le programme le plus adapté et répondons
+            à toutes vos questions. Aucun engagement, juste une conversation
+            sincère sur votre carrière.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
@@ -55,7 +56,7 @@ export default function CTA({ variant = "default" }: CTAProps) {
               className="w-full sm:w-auto"
             >
               <Link href="/contact?source=cta_main">
-                Ücretsiz Görüşme Talep Edin
+                Demander un Entretien Gratuit
               </Link>
             </Button>
             <Button
@@ -64,7 +65,7 @@ export default function CTA({ variant = "default" }: CTAProps) {
               variant="outline"
               className="w-full border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 sm:w-auto"
             >
-              <Link href="/financement/tarifs">Tarifelerimizi Görün</Link>
+              <Link href="/financement/tarifs">Voir Nos Tarifs</Link>
             </Button>
           </div>
         </div>

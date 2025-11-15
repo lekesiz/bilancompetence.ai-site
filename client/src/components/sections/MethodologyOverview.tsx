@@ -9,21 +9,21 @@ export default function MethodologyOverview() {
       title: "Phase Préliminaire",
       duration: "2-3 heures",
       description:
-        "Hedeflerinizi tanımlayın, beklentilerinizi netleştirin ve bilan sürecinin yol haritasını birlikte çizelim.",
+        "Définissez vos objectifs, clarifiez vos attentes et traçons ensemble la feuille de route du processus de bilan.",
     },
     {
       number: "02",
       title: "Phase d'Investigation",
       duration: "12-15 heures",
       description:
-        "Yeteneklerinizi, motivasyonlarınızı ve değerlerinizi derinlemesine keşfedin. AI destekli testler ve birebir görüşmelerle.",
+        "Explorez en profondeur vos talents, motivations et valeurs. Avec des tests assistés par IA et des entretiens individuels.",
     },
     {
       number: "03",
       title: "Phase de Conclusion",
       duration: "6-8 heures",
       description:
-        "Kariyer projenizi somutlaştırın, eylem planınızı oluşturun ve sentez dokümanınızı alın. Artık yol haritanız hazır!",
+        "Concrétisez votre projet professionnel, élaborez votre plan d'action et recevez votre document de synthèse. Votre feuille de route est prête !",
     },
   ];
 
@@ -32,12 +32,12 @@ export default function MethodologyOverview() {
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl lg:text-5xl">
-            Yasal Çerçevede, Bilimsel Metodoloji ile
+            Cadre Légal, Méthodologie Scientifique
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Bilan de compétences, Fransız iş hukuku tarafından tanımlanmış,
-            toplam 24 saatlik yapılandırılmış bir süreçtir. İşte sizinle
-            birlikte atacağımız adımlar:
+            Le bilan de compétences est un processus structuré de 24 heures,
+            défini par le droit du travail français. Voici les étapes que nous
+            franchirons ensemble :
           </p>
         </div>
 
@@ -74,14 +74,14 @@ export default function MethodologyOverview() {
             <CheckCircle2 className="h-12 w-12 text-primary" />
           </div>
           <h3 className="mb-2 font-serif text-xl font-semibold">
-            Toplam 24 Saat, Ömür Boyu Etki
+            24 Heures au Total, Impact à Vie
           </h3>
           <p className="mb-6 text-muted-foreground">
-            Yasal olarak tanımlanmış bu süreç, kariyerinizde kalıcı bir değişim
-            yaratmak için tasarlanmıştır. Detaylı metodolojimizi keşfedin.
+            Ce processus légalement défini est conçu pour créer un changement
+            durable dans votre carrière. Découvrez notre méthodologie détaillée.
           </p>
           <Button asChild>
-            <Link href="/methodologie">Metodolojimizi İnceleyin</Link>
+            <Link href="/methodologie">Découvrir Notre Méthodologie</Link>
           </Button>
         </div>
       </div>
