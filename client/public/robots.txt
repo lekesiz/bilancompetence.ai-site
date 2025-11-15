@@ -1,0 +1,10 @@
+# robots.txt for bilancompetence.ai
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://bilancompetence.ai/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

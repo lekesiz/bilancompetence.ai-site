@@ -34,18 +34,18 @@
 - [ ] /cgv sayfası
 
 ## Phase 5: Blog Sistemi ve Yerel Uzmanlık Sayfası
-- [ ] /blog liste sayfası
-- [ ] /blog/[slug] detay sayfası
-- [ ] Blog içerik entegrasyonu (3 makale)
+- [x] /blog liste sayfası
+- [x] /blog/[slug] detay sayfası
+- [x] Blog içerik entegrasyonu (3 makale)
 - [ ] /expertise-alsace sayfası
 - [x] /contact sayfası (form)
 
 ## Phase 6: SEO Optimizasyonu ve Son Dokunuşlar
-- [ ] Meta tags (title, description) tüm sayfalar
+- [x] Meta tags (title, description) ana sayfa (diğer sayfalar için component hazır)
 - [ ] Structured data (JSON-LD) - LocalBusiness, FAQPage
-- [ ] sitemap.xml oluşturma
-- [ ] robots.txt oluşturma
-- [ ] Open Graph ve Twitter Card meta tags
+- [x] sitemap.xml oluşturma
+- [x] robots.txt oluşturma
+- [x] Open Graph ve Twitter Card meta tags (SEOHead component)
 - [ ] Görsel optimizasyonu (WebP format)
 - [ ] Performans optimizasyonu (lazy loading)
 - [ ] Responsive tasarım kontrolü

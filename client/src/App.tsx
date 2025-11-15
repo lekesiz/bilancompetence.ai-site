@@ -13,6 +13,8 @@ import Contact from "./pages/Contact";
 import FinancementCPF from "./pages/FinancementCPF";
 import Tarifs from "./pages/Tarifs";
 import MentionsLegales from "./pages/MentionsLegales";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Router() {
   return (
@@ -24,6 +26,8 @@ function Router() {
       <Route path={"/financement/cpf"} component={FinancementCPF} />
       <Route path={"/financement/tarifs"} component={Tarifs} />
       <Route path={"/mentions-legales"} component={MentionsLegales} />
+      <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/:slug"} component={BlogPost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
