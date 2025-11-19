@@ -1,13 +1,17 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import CTA from "@/components/sections/CTA";
 import { Check, Star } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function Tarifs() {
+
   const pricingPlans = [
     {
       name: "Bilan Essentiel",
-      price: "1 790€",
+      productKey: "BILAN_ESSENTIEL" as const,
+      price: "1 490€",
       description: "Pour découvrir vos compétences et clarifier votre projet",
       features: [
         "24 heures de bilan (cadre légal)",
@@ -23,7 +27,8 @@ export default function Tarifs() {
     },
     {
       name: "Bilan Avancé (IA)",
-      price: "2 190€",
+      productKey: "BILAN_AVANCE" as const,
+      price: "1 790€",
       description: "Avec l'intelligence artificielle pour aller plus loin",
       features: [
         "Tout du Bilan Essentiel",
@@ -39,7 +44,8 @@ export default function Tarifs() {
     },
     {
       name: "Bilan Premium (Exécutif)",
-      price: "2 890€",
+      productKey: "BILAN_PREMIUM" as const,
+      price: "2 290€",
       description: "Pour les cadres et dirigeants exigeants",
       features: [
         "Tout du Bilan Avancé (IA)",
@@ -57,6 +63,14 @@ export default function Tarifs() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Tarifs : Prix du Bilan de Compétences | 3 Formules"
+        description="Découvrez nos 3 formules de bilan de compétences : Essentiel (1790€), Avancé IA (2190€), Premium (2890€). 100% finançable CPF. Tarifs transparents, sans frais."
+        keywords="tarifs bilan de compétences, prix bilan compétences, coût bilan, financement CPF, formules"
+        canonical="https://bilancompetence.ai/financement/tarifs"
+      />
+      <Breadcrumbs items={[{ label: "Financement", href: "/financement/cpf" }, { label: "Tarifs" }]} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
         <div className="container">
@@ -64,11 +78,11 @@ export default function Tarifs() {
             <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
               Tarifs Transparents, Investissement Durable
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+            <p className="mb-8 text-lead text-muted-foreground">
               Des formules adaptées à vos besoins, toutes finançables à 100% par
               le CPF. Aucun frais caché, aucune surprise.
             </p>
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent-foreground">
+            <div className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground">
               <Check className="h-4 w-4" />
               <span>Certifié Qualiopi • Éligible CPF</span>
             </div>
@@ -83,7 +97,7 @@ export default function Tarifs() {
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative rounded-lg border p-8 shadow-sm transition-all hover:shadow-md ${
+                className={`relative rounded-lg border p-8 shadow-soft transition-all hover:shadow-medium ${
                   plan.popular
                     ? "border-primary bg-primary/5 ring-2 ring-primary"
                     : "bg-card"
@@ -126,13 +140,11 @@ export default function Tarifs() {
                 </ul>
 
                 <Button
-                  asChild
                   className="w-full"
                   variant={plan.popular ? "default" : "outline"}
+                  asChild
                 >
-                  <Link
-                    href={`/contact?formule=${plan.name.toLowerCase().replace(/\s+/g, "-")}`}
-                  >
+                  <Link href={`/contact?tarif=${plan.name.toLowerCase().replace(/\s+/g, '-')}`}>
                     {plan.cta}
                   </Link>
                 </Button>
@@ -178,7 +190,7 @@ export default function Tarifs() {
               Options de Paiement Flexibles
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+              <div className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft">
                 <h3 className="mb-3 font-serif text-xl font-semibold">
                   Financement CPF
                 </h3>
@@ -192,7 +204,7 @@ export default function Tarifs() {
                 </Button>
               </div>
 
-              <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
+              <div className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft">
                 <h3 className="mb-3 font-serif text-xl font-semibold">
                   Autres Aides
                 </h3>

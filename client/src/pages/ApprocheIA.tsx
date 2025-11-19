@@ -1,54 +1,64 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import CTA from "@/components/sections/CTA";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Brain, Zap, Target, Shield } from "lucide-react";
 
 export default function ApprocheIA() {
   const aiFeatures = [
     {
       icon: Brain,
-      title: "Derinlemesine CV Analizi",
+      title: "Analyse Approfondie du CV",
       description:
-        "DeepSeek AI, CV'nizdeki her satırı analiz eder. Sadece ne yaptığınızı değil, nasıl yaptığınızı ve hangi transferable skills'e sahip olduğunuzu ortaya çıkarır.",
+        "DeepSeek AI analyse chaque ligne de votre CV. Non seulement ce que vous avez fait, mais comment vous l'avez fait et quelles compétences transférables vous possédez.",
     },
     {
       icon: Zap,
-      title: "Beklenmedik Kariyer Yolları",
+      title: "Parcours de Carrière Inattendus",
       description:
-        "AI, geleneksel danışmanların gözden kaçırabileceği niş sektörleri ve yükselen meslekleri tespit eder. Sizi şaşırtacak önerilerle karşılaşabilirsiniz.",
+        "L'IA détecte des secteurs de niche et des métiers émergents que les consultants traditionnels pourraient manquer. Vous pourriez être surpris par les suggestions.",
     },
     {
       icon: Target,
-      title: "Yetkinlik-Meslek Eşleştirmesi",
+      title: "Correspondance Compétences-Métiers",
       description:
-        "Test sonuçlarınız ve notlarınız AI tarafından işlenerek, yeteneklerinizle en uyumlu meslekler ve sektörler belirlenir.",
+        "Vos résultats de tests et notes sont traités par l'IA pour identifier les métiers et secteurs les plus alignés avec vos talents.",
     },
     {
       icon: Shield,
-      title: "Objektif ve Tarafsız",
+      title: "Objectif et Impartial",
       description:
-        "AI, önyargılardan arındırılmış bir analiz sunar. Sadece veriye dayalı, matematiksel bir değerlendirme.",
+        "L'IA offre une analyse dépourvue de préjugés. Uniquement basée sur les données, une évaluation mathématique.",
     },
   ];
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Approche IA : Bilan de Compétences avec Intelligence Artificielle"
+        description="Découvrez comment l'IA DeepSeek révolutionne le bilan de compétences : analyse prédictive, correspondance compétences-métiers, personnalisation. Innovation."
+        keywords="bilan de compétences IA, intelligence artificielle, DeepSeek, analyse prédictive, matching compétences, innovation"
+        canonical="https://bilancompetence.ai/bilan-de-competences/approche-ia"
+      />
+      <Breadcrumbs items={[
+        { label: "Bilan de Compétences", href: "/bilan-de-competences/definition" },
+        { label: "Approche IA" }
+      ]} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-secondary/5 py-16 md:py-24">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary-foreground">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
               <Zap className="h-4 w-4" />
               <span>Innovation Technologique</span>
             </div>
             <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
-              Yapay Zeka ile Güçlendirilmiş{" "}
-              <span className="gradient-text">Bilan de Compétences</span>
+              Bilan de Compétences Renforcé par{" "}
+              <span className="gradient-text">l'Intelligence Artificielle</span>
             </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Geleneksel danışmanlığın insan dokunuşunu, yapay zekanın analitik
-              gücüyle birleştiriyoruz. Gizli potansiyelinizi ortaya çıkaran,
-              tarafsız ve derinlemesine bir kariyer analizi.
+            <p className="text-lead text-muted-foreground">
+              Nous combinons la touche humaine du conseil traditionnel avec la puissance analytique de l'intelligence artificielle. Une analyse de carrière impartiale et approfondie qui révèle votre potentiel caché.
             </p>
           </div>
         </div>
@@ -61,22 +71,14 @@ export default function ApprocheIA() {
             {/* Introduction */}
             <div>
               <h2 className="mb-4 font-serif text-3xl font-bold">
-                İnsan + Makine: Geleceğin Bilan Yaklaşımı
+                Humain + Machine : L'Approche Bilan du Futur
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Bir bilan de compétences'in kalbi, danışman ile danışan
-                  arasındaki güven ilişkisidir. Bu gerçeği değiştirmiyoruz.
-                  Ancak, bu ilişkiyi yapay zekanın sunduğu objektif, veri
-                  odaklı analizlerle zenginleştiriyoruz.
+                  Le cœur d'un bilan de compétences est la relation de confiance entre le consultant et le bénéficiaire. Nous ne changeons pas cette réalité. Cependant, nous enrichissons cette relation avec les analyses objectives et axées sur les données que l'intelligence artificielle offre.
                 </p>
                 <p>
-                  <strong>bilancompetence.ai</strong> olarak, DeepSeek gibi en
-                  gelişmiş dil modellerini kullanarak, CV'niz, test
-                  sonuçlarınız ve bilan sürecindeki notlarınızı derinlemesine
-                  analiz ediyoruz. Sonuç? Sadece "ne yapabileceğinizi" değil,
-                  aynı zamanda "nerede parlamaya devam edeceğinizi" gösteren bir
-                  kariyer haritası.
+                  Chez <strong>bilancompetence.ai</strong>, nous utilisons les modèles de langage les plus avancés comme DeepSeek pour analyser en profondeur votre CV, vos résultats de tests et vos notes de séances. Le résultat ? Une carte de carrière qui montre non seulement "ce que vous pouvez faire", mais aussi "où vous continuerez à briller".
                 </p>
               </div>
             </div>
@@ -84,7 +86,7 @@ export default function ApprocheIA() {
             {/* AI Features */}
             <div>
               <h2 className="mb-6 font-serif text-3xl font-bold">
-                Yapay Zeka Analizimiz Nasıl Çalışır?
+                Comment Fonctionne Notre Analyse IA ?
               </h2>
               <div className="grid gap-6 md:grid-cols-2">
                 {aiFeatures.map((feature, index) => {
@@ -92,7 +94,7 @@ export default function ApprocheIA() {
                   return (
                     <div
                       key={index}
-                      className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm"
+                      className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft"
                     >
                       <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                         <Icon className="h-6 w-6 text-primary" />
@@ -112,25 +114,17 @@ export default function ApprocheIA() {
             {/* Real Example */}
             <div className="rounded-lg border bg-muted/30 p-8">
               <h3 className="mb-4 font-serif text-2xl font-semibold">
-                Gerçek Bir Örnek
+                Un Exemple Concret
               </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  <strong>Durum:</strong> 15 yıllık deneyime sahip bir muhasebe
-                  müdürü, kariyerinde değişiklik yapmak istiyor ancak hangi
-                  yönde ilerleyeceğinden emin değil.
+                  <strong>Situation :</strong> Un directeur comptable avec 15 ans d'expérience souhaite changer de carrière mais n'est pas sûr de la direction à prendre.
                 </p>
                 <p>
-                  <strong>Geleneksel Yaklaşım:</strong> Danışman, muhasebeyle
-                  ilgili diğer rolleri (CFO, denetçi) önerir.
+                  <strong>Approche Traditionnelle :</strong> Le consultant suggère d'autres rôles liés à la comptabilité (CFO, auditeur).
                 </p>
                 <p>
-                  <strong>AI Destekli Yaklaşım:</strong> DeepSeek, danışanın
-                  CV'sinde sıkça kullandığı "süreç optimizasyonu", "veri analizi"
-                  ve "ekip eğitimi" ifadelerini tespit eder. AI, bu yetkinliklerin
-                  "Operasyonel Mükemmellik Danışmanı" veya "Veri Analisti" gibi
-                  mesleklerde de değerli olduğunu gösterir. Danışan, hiç
-                  düşünmediği bu yeni kariyer yollarını keşfeder.
+                  <strong>Approche Assistée par IA :</strong> DeepSeek détecte dans le CV du bénéficiaire des expressions fréquemment utilisées comme "optimisation des processus", "analyse de données" et "formation d'équipe". L'IA montre que ces compétences sont également précieuses dans des métiers comme "Consultant en Excellence Opérationnelle" ou "Analyste de Données". Le bénéficiaire découvre ces nouveaux parcours de carrière auxquels il n'avait jamais pensé.
                 </p>
               </div>
             </div>
@@ -138,30 +132,24 @@ export default function ApprocheIA() {
             {/* Privacy */}
             <div>
               <h2 className="mb-4 font-serif text-3xl font-bold">
-                Verileriniz Güvende
+                Vos Données Sont en Sécurité
               </h2>
               <p className="text-muted-foreground">
-                Yapay zeka analizimiz, verilerinizi tamamen gizli ve güvenli bir
-                şekilde işler. Hiçbir kişisel bilginiz üçüncü taraflarla
-                paylaşılmaz veya AI modellerinin eğitiminde kullanılmaz. Analiz
-                tamamlandıktan sonra, tüm verileriniz güvenli bir şekilde
-                saklanır ve sadece sizin erişiminize açıktır.
+                Notre analyse par intelligence artificielle traite vos données de manière entièrement confidentielle et sécurisée. Aucune information personnelle n'est partagée avec des tiers ou utilisée pour entraîner les modèles d'IA. Une fois l'analyse terminée, toutes vos données sont stockées en toute sécurité et ne sont accessibles qu'à vous.
               </p>
             </div>
 
             {/* Academic Foundation */}
             <div className="text-center">
               <h3 className="mb-4 font-serif text-2xl font-semibold">
-                Teknoloji + Bilim
+                Technologie + Science
               </h3>
               <p className="mb-6 text-muted-foreground">
-                AI yaklaşımımız, uluslararası kariyer gelişimi araştırmalarına
-                dayanan bilimsel bir metodoloji üzerine kuruludur. Teknoloji,
-                sadece bir araçtır; gerçek güç, onu doğru şekilde kullanmaktır.
+                Notre approche IA repose sur une méthodologie scientifique fondée sur des recherches internationales en développement de carrière. La technologie n'est qu'un outil ; la vraie puissance réside dans son utilisation appropriée.
               </p>
               <Button asChild size="lg">
-                <Link href="/bilan-de-competences/recherche">
-                  Akademik Temellerimiz
+                <Link href="/bilan-de-competences/fondements-academiques">
+                  Nos Fondements Académiques
                 </Link>
               </Button>
             </div>

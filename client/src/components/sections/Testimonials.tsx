@@ -53,6 +53,9 @@ export default function Testimonials() {
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="w-12 h-12 rounded-full bg-gray-100"
+                  loading="lazy"
+                  width="48"
+                  height="48"
                 />
                 <div>
                   <div className="font-semibold text-gray-900">
@@ -75,13 +78,16 @@ export default function Testimonials() {
           {testimonials.slice(6).map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100"
+              className="bg-white rounded-xl p-6 shadow-medium hover:shadow-lg transition-shadow border border-gray-100"
             >
               <div className="flex gap-4">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="w-16 h-16 rounded-full bg-gray-100 flex-shrink-0"
+                  loading="lazy"
+                  width="64"
+                  height="64"
                 />
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-2">

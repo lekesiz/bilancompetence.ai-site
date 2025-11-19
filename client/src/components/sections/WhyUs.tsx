@@ -55,7 +55,7 @@ export default function WhyUs() {
             return (
               <div
                 key={index}
-                className="group rounded-lg border bg-card p-8 text-card-foreground shadow-sm transition-all hover:shadow-md"
+                className="group rounded-lg border bg-card card-hover-subtle p-8 text-card-foreground shadow-soft transition-all hover:shadow-medium"
               >
                 <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                   <Icon className="h-6 w-6 text-primary" />

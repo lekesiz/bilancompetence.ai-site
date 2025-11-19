@@ -1,232 +1,300 @@
-import { COMPANY_NAME, COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE } from "@/const";
+import { COMPANY_NAME, COMPANY_EMAIL, COMPANY_ADDRESS, COMPANY_SIREN } from "@/const";
+
+import SEOHead from "@/components/SEOHead";
+import { FileText, Euro, Calendar, RefreshCw, Shield, AlertCircle } from "lucide-react";
 
 export default function CGV() {
   return (
     <div className="min-h-screen">
-      <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16">
+      <SEOHead
+        title="Conditions Générales de Vente - bilancompetence.ai"
+        description="Conditions générales de vente des prestations de bilan de compétences de bilancompetence.ai. Tarifs, modalités de paiement, annulation et garanties."
+        keywords="conditions générales de vente, CGV, tarifs, modalités, bilan de compétences"
+        canonical="https://bilancompetence.ai/cgv"
+      />
+
+
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
         <div className="container">
-          <h1 className="font-serif text-4xl font-bold md:text-5xl">
-            Conditions Générales de Vente
-          </h1>
-        </div>
-      </section>
-
-      <section className="py-16">
-        <div className="container">
-          <div className="prose prose-slate mx-auto max-w-4xl dark:prose-invert">
-            <p className="lead">
-              Les présentes Conditions Générales de Vente (CGV) régissent la
-              relation contractuelle entre <strong>{COMPANY_NAME}</strong> et
-              toute personne (ci-après "le Client") souhaitant bénéficier d'un
-              bilan de compétences.
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-6 inline-flex rounded-full bg-primary/10 p-3">
+              <FileText className="h-8 w-8 text-primary" />
+            </div>
+            <h1 className="mb-4 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
+              Conditions Générales de Vente
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Les présentes Conditions Générales de Vente (CGV) régissent la relation contractuelle entre <strong>{COMPANY_NAME}</strong> et toute personne souhaitant bénéficier d'un bilan de compétences.
             </p>
-
-            <h2>Article 1 - Champ d'Application</h2>
-            <p>
-              Les présentes CGV s'appliquent à toutes les prestations de bilan
-              de compétences proposées par {COMPANY_NAME}, que le financement
-              soit assuré par le CPF, un OPCO, Pôle Emploi, l'employeur ou le
-              Client lui-même.
-            </p>
-            <p>
-              Toute commande de prestation implique l'acceptation sans réserve
-              des présentes CGV.
-            </p>
-
-            <h2>Article 2 - Présentation des Services</h2>
-            <p>
-              {COMPANY_NAME} propose des prestations de bilan de compétences
-              conformes aux dispositions du Code du Travail (Articles L6313-1 et
-              suivants). Nos prestations comprennent :
-            </p>
-            <ul>
-              <li><strong>Bilan Essentiel :</strong> 24 heures de bilan (cadre légal), entretiens individuels, tests, synthèse écrite</li>
-              <li><strong>Bilan Avancé (IA) :</strong> Bilan Essentiel + analyse IA du CV et compétences</li>
-              <li><strong>Bilan Premium (Exécutif) :</strong> Bilan Avancé + évaluation leadership, coaching supplémentaire</li>
-            </ul>
-            <p>
-              Toutes nos prestations sont certifiées <strong>Qualiopi</strong>
-              pour la catégorie "Bilans de compétences".
-            </p>
-
-            <h2>Article 3 - Tarifs</h2>
-            <p>
-              Les tarifs de nos prestations sont indiqués en euros TTC (TVA non
-              applicable - Article 261-4-4° du CGI) et sont les suivants :
-            </p>
-            <ul>
-              <li>Bilan Essentiel : 1 790 €</li>
-              <li>Bilan Avancé (IA) : 2 190 €</li>
-              <li>Bilan Premium (Exécutif) : 2 890 €</li>
-            </ul>
-            <p>
-              Ces tarifs sont susceptibles de modification à tout moment, mais
-              seront facturés sur la base du tarif en vigueur au moment de la
-              commande.
-            </p>
-
-            <h2>Article 4 - Modalités d'Inscription</h2>
-            <h3>4.1 Financement CPF</h3>
-            <p>
-              Le Client s'inscrit directement via la plateforme{" "}
-              <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener noreferrer">
-                Mon Compte Formation
-              </a>. L'inscription est validée sous 48 heures ouvrées.
-            </p>
-
-            <h3>4.2 Autres Financements</h3>
-            <p>
-              Pour tout autre mode de financement (OPCO, Pôle Emploi, paiement
-              personnel), le Client contacte {COMPANY_NAME} pour un entretien
-              préliminaire gratuit. Un devis personnalisé est ensuite établi.
-            </p>
-
-            <h2>Article 5 - Modalités de Paiement</h2>
-            <h3>5.1 Paiement CPF</h3>
-            <p>
-              Le paiement est effectué automatiquement par la plateforme Mon
-              Compte Formation. Aucun paiement direct du Client n'est requis si
-              le solde CPF est suffisant.
-            </p>
-
-            <h3>5.2 Paiement Personnel</h3>
-            <p>
-              En cas de paiement personnel, le Client peut régler :
-            </p>
-            <ul>
-              <li>En une seule fois par virement bancaire ou carte bancaire</li>
-              <li>En 3 fois sans frais (sous conditions)</li>
-            </ul>
-            <p>
-              Un acompte de 30% est requis à la signature du contrat. Le solde
-              est payable avant la phase de conclusion du bilan.
-            </p>
-
-            <h2>Article 6 - Droit de Rétractation</h2>
-            <p>
-              Conformément à l'article L221-18 du Code de la consommation, le
-              Client dispose d'un délai de <strong>14 jours calendaires</strong>{" "}
-              pour exercer son droit de rétractation, sans avoir à justifier de
-              motifs ni à payer de pénalités.
-            </p>
-            <p>
-              Le délai court à compter de la signature du contrat (ou de la
-              validation de l'inscription CPF).
-            </p>
-            <p>
-              Pour exercer ce droit, le Client doit notifier sa décision par
-              email à : <a href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a>
-            </p>
-            <p>
-              <strong>Exception :</strong> Si le Client demande expressément que
-              la prestation commence avant la fin du délai de rétractation, il
-              renonce à ce droit pour les séances déjà réalisées.
-            </p>
-
-            <h2>Article 7 - Déroulement du Bilan</h2>
-            <h3>7.1 Convention Tripartite</h3>
-            <p>
-              Une convention tripartite est signée entre le Client, {COMPANY_NAME}
-              et l'organisme financeur (si applicable). Cette convention précise
-              les objectifs, le calendrier et les modalités du bilan.
-            </p>
-
-            <h3>7.2 Confidentialité</h3>
-            <p>
-              Les résultats du bilan sont <strong>strictement confidentiels</strong>.
-              Seul le Client en est destinataire. Aucune information ne sera
-              transmise à l'employeur, Pôle Emploi ou tout autre tiers sans
-              l'accord écrit du Client.
-            </p>
-
-            <h3>7.3 Durée et Rythme</h3>
-            <p>
-              Le bilan se déroule sur une période de 2 à 4 mois, selon la
-              disponibilité du Client. Les séances peuvent avoir lieu en
-              présentiel (à notre bureau) ou en visioconférence.
-            </p>
-
-            <h2>Article 8 - Obligations du Client</h2>
-            <p>
-              Le Client s'engage à :
-            </p>
-            <ul>
-              <li>Participer activement à toutes les séances programmées</li>
-              <li>Fournir les documents demandés (CV, diplômes, etc.)</li>
-              <li>Informer {COMPANY_NAME} de toute absence au moins 48 heures à l'avance</li>
-              <li>Respecter la confidentialité des outils et méthodes utilisés</li>
-            </ul>
-
-            <h2>Article 9 - Obligations de {COMPANY_NAME}</h2>
-            <p>
-              {COMPANY_NAME} s'engage à :
-            </p>
-            <ul>
-              <li>Fournir une prestation conforme au cadre légal du bilan de compétences</li>
-              <li>Respecter la confidentialité des échanges et des résultats</li>
-              <li>Remettre au Client un document de synthèse à l'issue du bilan</li>
-              <li>Proposer un entretien de suivi à 6 mois</li>
-            </ul>
-
-            <h2>Article 10 - Annulation et Report</h2>
-            <h3>10.1 Par le Client</h3>
-            <p>
-              Toute annulation ou report d'une séance doit être notifié au moins
-              48 heures à l'avance. En cas d'absence non justifiée, la séance
-              sera considérée comme réalisée et ne pourra être reportée.
-            </p>
-
-            <h3>10.2 Par {COMPANY_NAME}</h3>
-            <p>
-              En cas d'empêchement du consultant, {COMPANY_NAME} s'engage à
-              proposer une date de report dans les meilleurs délais.
-            </p>
-
-            <h2>Article 11 - Réclamations</h2>
-            <p>
-              Toute réclamation doit être adressée par écrit à :{" "}
-              <a href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a>
-            </p>
-            <p>
-              {COMPANY_NAME} s'engage à répondre sous 15 jours ouvrés.
-            </p>
-            <p>
-              En cas de litige non résolu, le Client peut saisir le médiateur de
-              la consommation compétent.
-            </p>
-
-            <h2>Article 12 - Protection des Données</h2>
-            <p>
-              Les données personnelles collectées sont traitées conformément à
-              notre{" "}
-              <a href="/confidentialite">Politique de Confidentialité</a> et au
-              RGPD.
-            </p>
-
-            <h2>Article 13 - Droit Applicable et Juridiction</h2>
-            <p>
-              Les présentes CGV sont régies par le droit français. En cas de
-              litige, et à défaut d'accord amiable, les tribunaux du ressort du
-              siège social de {COMPANY_NAME} seront seuls compétents.
-            </p>
-
-            <h2>Article 14 - Contact</h2>
-            <p>
-              Pour toute question relative aux présentes CGV, vous pouvez nous
-              contacter :
-            </p>
-            <ul>
-              <li><strong>Email :</strong> <a href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a></li>
-              <li><strong>Téléphone :</strong> {COMPANY_PHONE}</li>
-              <li><strong>Adresse :</strong> {COMPANY_ADDRESS}</li>
-            </ul>
-
-            <p className="text-sm text-muted-foreground">
-              <em>Dernière mise à jour : 15 novembre 2025</em>
+            <p className="mt-4 text-sm text-muted-foreground">
+              <strong>Dernière mise à jour :</strong> 17 novembre 2025
             </p>
           </div>
         </div>
       </section>
+
+      {/* Content Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-4xl space-y-12">
+            {/* Champ d'Application */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <h2 className="mb-6 font-serif text-2xl font-bold">Article 1 - Champ d'Application</h2>
+              <p className="mb-4 text-muted-foreground">
+                Les présentes CGV s'appliquent à toutes les prestations de bilan de compétences proposées par {COMPANY_NAME}, que le financement soit assuré par :
+              </p>
+              <div className="grid gap-3 md:grid-cols-2">
+                <div className="rounded-lg bg-muted/50 p-3 text-sm">
+                  ✓ Le CPF (Compte Personnel de Formation)
+                </div>
+                <div className="rounded-lg bg-muted/50 p-3 text-sm">
+                  ✓ Un OPCO (Opérateur de Compétences)
+                </div>
+                <div className="rounded-lg bg-muted/50 p-3 text-sm">
+                  ✓ Pôle Emploi (AIF, PDC)
+                </div>
+                <div className="rounded-lg bg-muted/50 p-3 text-sm">
+                  ✓ L'employeur ou le Client lui-même
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Toute commande de prestation implique l'acceptation sans réserve des présentes CGV.
+              </p>
+            </div>
+
+            {/* Présentation des Services */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <Shield className="h-6 w-6 text-primary" />
+                <h2 className="font-serif text-2xl font-bold">Article 2 - Présentation des Services</h2>
+              </div>
+              <p className="mb-6 text-muted-foreground">
+                {COMPANY_NAME} propose des prestations de bilan de compétences conformes aux dispositions du Code du Travail (Articles L6313-1 et suivants). Toutes nos prestations sont certifiées <strong className="text-foreground">Qualiopi</strong>.
+              </p>
+              <div className="space-y-4">
+                <div className="rounded-lg border-l-4 border-primary bg-muted/30 p-4">
+                  <h3 className="mb-2 font-semibold text-foreground">Bilan Essentiel</h3>
+                  <p className="text-sm text-muted-foreground">24 heures de bilan (cadre légal), entretiens individuels, tests psychométriques, synthèse écrite détaillée</p>
+                </div>
+                <div className="rounded-lg border-l-4 border-primary bg-muted/30 p-4">
+                  <h3 className="mb-2 font-semibold text-foreground">Bilan Avancé (IA)</h3>
+                  <p className="text-sm text-muted-foreground">Bilan Essentiel + analyse IA du CV et compétences, recommandations personnalisées</p>
+                </div>
+                <div className="rounded-lg border-l-4 border-primary bg-muted/30 p-4">
+                  <h3 className="mb-2 font-semibold text-foreground">Bilan Premium (Exécutif)</h3>
+                  <p className="text-sm text-muted-foreground">Bilan Avancé + évaluation leadership, coaching supplémentaire, suivi post-bilan 6 mois</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tarifs */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <Euro className="h-6 w-6 text-primary" />
+                <h2 className="font-serif text-2xl font-bold">Article 3 - Tarifs</h2>
+              </div>
+              <p className="mb-6 text-muted-foreground">
+                Les tarifs de nos prestations sont indiqués en euros TTC (TVA non applicable - Article 261-4-4° du CGI) :
+              </p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="rounded-lg border bg-background p-6 text-center">
+                  <div className="mb-2 text-sm font-semibold text-muted-foreground">Essentiel</div>
+                  <div className="mb-1 text-3xl font-bold text-foreground">1 790 €</div>
+                  <div className="text-xs text-muted-foreground">TTC</div>
+                </div>
+                <div className="rounded-lg border-2 border-primary bg-primary/5 p-6 text-center">
+                  <div className="mb-2 text-sm font-semibold text-primary">Avancé (IA)</div>
+                  <div className="mb-1 text-3xl font-bold text-foreground">2 190 €</div>
+                  <div className="text-xs text-muted-foreground">TTC</div>
+                </div>
+                <div className="rounded-lg border bg-background p-6 text-center">
+                  <div className="mb-2 text-sm font-semibold text-muted-foreground">Premium</div>
+                  <div className="mb-1 text-3xl font-bold text-foreground">2 890 €</div>
+                  <div className="text-xs text-muted-foreground">TTC</div>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Ces tarifs sont susceptibles d'être modifiés à tout moment, mais les prestations seront facturées sur la base des tarifs en vigueur au moment de la commande.
+              </p>
+            </div>
+
+            {/* Modalités de Paiement */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <h2 className="mb-6 font-serif text-2xl font-bold">Article 4 - Modalités de Paiement</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Financement CPF</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Le paiement est effectué directement par la Caisse des Dépôts et Consignations. Aucun versement n'est demandé au bénéficiaire si le solde CPF est suffisant.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Financement OPCO / Pôle Emploi</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Facturation directe à l'organisme financeur après validation du dossier. Le Client peut être amené à verser un acompte si le financement est partiel.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Financement Personnel</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Paiement par virement bancaire, chèque ou carte bancaire. Un acompte de 30% est demandé à la signature du contrat, le solde étant exigible avant la phase de conclusion.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Déroulement de la Prestation */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <Calendar className="h-6 w-6 text-primary" />
+                <h2 className="font-serif text-2xl font-bold">Article 5 - Déroulement de la Prestation</h2>
+              </div>
+              <p className="mb-4 text-muted-foreground">
+                Le bilan de compétences se déroule en 3 phases obligatoires :
+              </p>
+              <div className="space-y-3">
+                <div className="flex gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-semibold text-foreground">Phase Préliminaire</h3>
+                    <p className="text-sm text-muted-foreground">Analyse de la demande, définition des objectifs, information sur les conditions de déroulement</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-semibold text-foreground">Phase d'Investigation</h3>
+                    <p className="text-sm text-muted-foreground">Analyse du parcours, identification des compétences, évaluation des aptitudes, exploration des pistes professionnelles</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="mb-1 font-semibold text-foreground">Phase de Conclusion</h3>
+                    <p className="text-sm text-muted-foreground">Synthèse du bilan, élaboration du projet professionnel, plan d'action détaillé</p>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-muted-foreground">
+                <strong>Durée :</strong> Le bilan se déroule sur une période de 2 à 4 mois, avec une répartition flexible des séances selon vos disponibilités.
+              </p>
+            </div>
+
+            {/* Annulation et Rétractation */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <RefreshCw className="h-6 w-6 text-primary" />
+                <h2 className="font-serif text-2xl font-bold">Article 6 - Annulation et Droit de Rétractation</h2>
+              </div>
+              <div className="space-y-4">
+                <div className="rounded-lg bg-primary/5 p-4">
+                  <h3 className="mb-2 font-semibold text-foreground">Droit de Rétractation (14 jours)</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Conformément à l'article L221-18 du Code de la Consommation, vous disposez d'un délai de 14 jours à compter de la signature du contrat pour exercer votre droit de rétractation, sans avoir à justifier de motifs ni à payer de pénalités.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Annulation après le délai de rétractation</h3>
+                  <p className="text-sm text-muted-foreground">
+                    En cas d'annulation après le délai de rétractation, les sommes versées restent acquises à {COMPANY_NAME} au prorata des heures de prestation effectuées.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Report de séance</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Toute séance non annulée au moins 48 heures à l'avance sera considérée comme effectuée et facturée.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Confidentialité */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <h2 className="mb-6 font-serif text-2xl font-bold">Article 7 - Confidentialité</h2>
+              <p className="mb-4 text-muted-foreground">
+                {COMPANY_NAME} s'engage à respecter la confidentialité des informations communiquées par le bénéficiaire dans le cadre du bilan de compétences.
+              </p>
+              <p className="text-muted-foreground">
+                Les résultats du bilan sont la propriété exclusive du bénéficiaire. Ils ne peuvent être communiqués à un tiers (employeur, organisme financeur) qu'avec l'accord écrit et exprès du bénéficiaire.
+              </p>
+            </div>
+
+            {/* Responsabilité */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <h2 className="mb-6 font-serif text-2xl font-bold">Article 8 - Responsabilité</h2>
+              <p className="mb-4 text-muted-foreground">
+                {COMPANY_NAME} met en œuvre tous les moyens nécessaires pour assurer la qualité de ses prestations. Toutefois, notre responsabilité ne saurait être engagée :
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground"></span>
+                  <span className="text-sm text-muted-foreground">En cas de force majeure empêchant l'exécution de la prestation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground"></span>
+                  <span className="text-sm text-muted-foreground">En cas de non-respect par le bénéficiaire de ses engagements (assiduité, implication)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground"></span>
+                  <span className="text-sm text-muted-foreground">Pour les décisions prises par le bénéficiaire suite au bilan</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Réclamations */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <div className="mb-6 flex items-center gap-3">
+                <AlertCircle className="h-6 w-6 text-primary" />
+                <h2 className="font-serif text-2xl font-bold">Article 9 - Réclamations et Litiges</h2>
+              </div>
+              <p className="mb-4 text-muted-foreground">
+                En cas de réclamation, le Client est invité à contacter {COMPANY_NAME} par email à{" "}
+                <a href={`mailto:${COMPANY_EMAIL}`} className="font-semibold text-primary hover:underline">
+                  {COMPANY_EMAIL}
+                </a>{" "}
+                ou par courrier à l'adresse : {COMPANY_ADDRESS}.
+              </p>
+              <p className="mb-4 text-muted-foreground">
+                Nous nous engageons à répondre dans un délai de 15 jours ouvrés.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                En cas de litige, et après échec d'une solution amiable, le Client peut saisir le médiateur de la consommation compétent ou les tribunaux français, seuls compétents.
+              </p>
+            </div>
+
+            {/* Modifications */}
+            <div className="rounded-lg border bg-card card-hover-subtle p-8">
+              <h2 className="mb-6 font-serif text-2xl font-bold">Article 10 - Modifications des CGV</h2>
+              <p className="text-muted-foreground">
+                {COMPANY_NAME} se réserve le droit de modifier les présentes CGV à tout moment. Les CGV applicables sont celles en vigueur à la date de la commande.
+              </p>
+            </div>
+
+            {/* Contact */}
+            <div className="rounded-lg border-2 border-primary bg-primary/5 p-8 text-center">
+              <h2 className="mb-4 font-serif text-2xl font-bold">Des Questions sur nos CGV ?</h2>
+              <p className="mb-6 text-muted-foreground">
+                Notre équipe est à votre disposition pour répondre à toutes vos questions concernant nos conditions générales de vente.
+              </p>
+              <a
+                href={`mailto:${COMPANY_EMAIL}`}
+                className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Nous Contacter
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     </div>
   );
 }

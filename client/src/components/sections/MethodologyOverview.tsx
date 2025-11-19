@@ -45,11 +45,11 @@ export default function MethodologyOverview() {
           {phases.map((phase, index) => (
             <div
               key={index}
-              className="group rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-all hover:shadow-md md:p-8"
+              className="group rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft transition-all hover:shadow-medium md:p-8"
             >
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
                 <div className="flex-shrink-0">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 font-serif text-2xl font-bold text-primary">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary font-serif text-2xl font-bold text-primary-foreground">
                     {phase.number}
                   </div>
                 </div>
@@ -58,7 +58,7 @@ export default function MethodologyOverview() {
                     <h3 className="font-serif text-xl font-semibold">
                       {phase.title}
                     </h3>
-                    <span className="inline-flex items-center rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary-foreground">
+                    <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
                       {phase.duration}
                     </span>
                   </div>
@@ -69,7 +69,7 @@ export default function MethodologyOverview() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-lg border bg-card p-8 text-center text-card-foreground shadow-sm">
+        <div className="mt-12 rounded-lg border bg-card card-hover-subtle p-8 text-center text-card-foreground shadow-soft">
           <div className="mb-4 flex justify-center">
             <CheckCircle2 className="h-12 w-12 text-primary" />
           </div>
@@ -81,7 +81,7 @@ export default function MethodologyOverview() {
             durable dans votre carrière. Découvrez notre méthodologie détaillée.
           </p>
           <Button asChild>
-            <Link href="/methodologie">Découvrir Notre Méthodologie</Link>
+            <Link href="/bilan-de-competences/methodologie">Découvrir Notre Méthodologie</Link>
           </Button>
         </div>
       </div>

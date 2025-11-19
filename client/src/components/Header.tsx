@@ -27,6 +27,7 @@ export default function Header() {
     },
     { name: "Expertise Alsace", href: "/expertise-alsace" },
     { name: "Blog", href: "/blog" },
+    { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -35,7 +36,7 @@ export default function Header() {
       <nav className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <img src={APP_LOGO} alt="bilancompetence.ai" className="h-10 w-auto" />
+          <img src={APP_LOGO} alt="bilancompetence.ai" className="h-10 w-auto" width="40" height="40" />
           <span className="hidden font-serif text-xl font-bold text-primary md:inline-block">
             bilancompetence.ai
           </span>

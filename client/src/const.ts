@@ -22,8 +22,8 @@ export const CERTIFICATIONS = { qualiopi: true, datadock: true };
 // Social links
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/netz-informatique",
-  twitter: "https://twitter.com/netzinfo",
-  facebook: "https://www.facebook.com/netzinformatique",
+  twitter: "https://x.com/NetzInformatiq1",
+  facebook: "https://www.facebook.com/informatiquehaguenau",
 };
 
 // Related websites

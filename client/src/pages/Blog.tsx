@@ -1,10 +1,19 @@
 import { Link } from "wouter";
+import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/data/blogPosts";
 import { Calendar, Clock } from "lucide-react";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 export default function Blog() {
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Blog : Actualités et Conseils sur le Bilan de Compétences"
+        description="Découvrez nos articles sur le bilan de compétences, la reconversion professionnelle, le CPF et le marché du travail en Alsace. Conseils d'experts 2025."
+        keywords="blog bilan compétences, reconversion professionnelle, CPF, carrière, Alsace"
+        canonical="https://bilancompetence.ai/blog"
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
         <div className="container">
@@ -12,7 +21,7 @@ export default function Blog() {
             <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
               Blog & Ressources Carrière
             </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
+            <p className="text-lead text-muted-foreground">
               Conseils d'experts, tendances du marché et guides pratiques pour
               réussir votre transition professionnelle en Alsace et ailleurs.
             </p>
@@ -30,13 +39,16 @@ export default function Blog() {
                 href={`/blog/${post.slug}`}
                 className="group"
               >
-                <article className="h-full overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md">
+                <article className="h-full overflow-hidden rounded-lg border bg-card card-hover-subtle text-card-foreground shadow-soft transition-all hover:shadow-medium">
                   {/* Image */}
                   <div className="aspect-video overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.title}
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      loading="lazy"
+                      width="800"
+                      height="450"
                     />
                   </div>
 
@@ -72,6 +84,11 @@ export default function Blog() {
                 </article>
               </Link>
             ))}
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="mx-auto mt-16 max-w-2xl">
+            <NewsletterForm />
           </div>
         </div>
       </section>

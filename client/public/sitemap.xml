@@ -1,85 +1,248 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Homepage -->
+  <!-- Homepage - Priority 1.0 (Most Important) -->
   <url>
     <loc>https://bilancompetence.ai/</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- Bilan de Compétences Pages -->
+  <!-- Core Pages - Priority 0.9 (Very Important) -->
   <url>
     <loc>https://bilancompetence.ai/bilan-de-competences/definition</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/bilan-de-competences/methodologie</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://bilancompetence.ai/bilan-de-competences/approche-ia</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Financement Pages -->
+  <url>
+    <loc>https://bilancompetence.ai/bilan-de-competences/fondements-academiques</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Financement Pages - Priority 0.9 (Very Important for Conversion) -->
   <url>
     <loc>https://bilancompetence.ai/financement/cpf</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://bilancompetence.ai/financement/tarifs</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Contact -->
   <url>
-    <loc>https://bilancompetence.ai/contact</loc>
-    <lastmod>2025-11-15</lastmod>
+    <loc>https://bilancompetence.ai/financement/autres-aides</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog -->
+  <!-- Local Expertise - Priority 0.8 (Important for Local SEO) -->
+  <url>
+    <loc>https://bilancompetence.ai/expertise-alsace</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact & Conversion - Priority 0.9 (Critical for Leads) -->
+  <url>
+    <loc>https://bilancompetence.ai/contact</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/booking</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Social Proof - Priority 0.7 -->
+  <url>
+    <loc>https://bilancompetence.ai/temoignages</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- FAQ & Support - Priority 0.7 -->
+  <url>
+    <loc>https://bilancompetence.ai/faq</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- About & Trust - Priority 0.6 -->
+  <url>
+    <loc>https://bilancompetence.ai/a-propos</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/parrainage</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Blog Hub - Priority 0.8 (Important for SEO) -->
   <url>
     <loc>https://bilancompetence.ai/blog</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
+  <!-- Blog Articles - Priority 0.7 (12 articles) -->
   <url>
     <loc>https://bilancompetence.ai/blog/guide-cpf-2025</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://bilancompetence.ai/blog/top-10-metiers-alsace-2025</loc>
-    <lastmod>2025-11-22</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://bilancompetence.ai/blog/ia-menace-opportunite</loc>
-    <lastmod>2025-11-29</lastmod>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Legal Pages -->
+  <url>
+    <loc>https://bilancompetence.ai/blog/reconversion-40-ans</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/bilan-vs-coaching</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/soft-skills-2025</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- New Blog Articles (6 nouveaux) -->
+  <url>
+    <loc>https://bilancompetence.ai/blog/tendances-carriere-2025-alsace</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/success-story-comptable-data-analyst</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/success-story-commercial-digital-marketer</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/metiers-avenir-grand-est</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/teletravail-equilibre-vie-pro-perso</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/blog/formation-continue-investir-dans-soi</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Interactive Tests - Priority 0.5 (New Features) -->
+  <url>
+    <loc>https://bilancompetence.ai/tests</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Sitemap HTML - Priority 0.4 -->
+  <url>
+    <loc>https://bilancompetence.ai/sitemap</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Legal Pages - Priority 0.3 (Low but Required) -->
   <url>
     <loc>https://bilancompetence.ai/mentions-legales</loc>
-    <lastmod>2025-11-15</lastmod>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/confidentialite</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://bilancompetence.ai/cgv</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -1,24 +1,72 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { COMPANY_NAME, COMPANY_PHONE, COMPANY_EMAIL, COMPANY_ADDRESS } from "@/const";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Loader2 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { useLocation } from "wouter";
+import { trackFormSubmission } from "@/components/GoogleAnalytics";
 
 export default function Contact() {
+  const [, setLocation] = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
+  });
+
+  const sendContactMutation = trpc.contact.send.useMutation({
+    onSuccess: () => {
+      trackFormSubmission("contact_form");
+      // Redirect to thank you page
+      setLocation("/merci");
+    },
+    onError: (error: any) => {
+      console.error("Contact form error:", error);
+      
+      // Try to parse error message from different possible structures
+      let errorMessage = "Une erreur s'est produite. Veuillez réessayer.";
+      
+      // Check for Zod validation errors in tRPC format
+      if (error.data?.zodError?.issues && error.data.zodError.issues.length > 0) {
+        errorMessage = error.data.zodError.issues[0].message;
+      }
+      // Check for field errors
+      else if (error.data?.zodError?.fieldErrors) {
+        const firstField = Object.keys(error.data.zodError.fieldErrors)[0];
+        const firstMessage = error.data.zodError.fieldErrors[firstField]?.[0];
+        if (firstMessage) {
+          errorMessage = firstMessage;
+        }
+      }
+      // Check for direct error message
+      else if (error.message) {
+        errorMessage = error.message;
+      }
+      // Check for shape.message (tRPC format)
+      else if (error.shape?.message) {
+        errorMessage = error.shape.message;
+      }
+      
+      toast.error(errorMessage);
+    },
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // This is a placeholder - in production, this would send to a backend
-    toast.success("Mesajınız alındı! En kısa sürede size dönüş yapacağız.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    
+    // Validation basique
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast.error("Veuillez remplir tous les champs obligatoires.");
+      return;
+    }
+
+    sendContactMutation.mutate(formData);
   };
 
   const handleChange = (
@@ -32,74 +80,70 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Contact : Prenez Rendez-vous pour Votre Bilan de Compétences"
+        description="Contactez-nous pour un entretien préliminaire gratuit. Haguenau, Alsace. Réponse sous 24h. Tél, email, formulaire en ligne. Experts certifiés Qualiopi."
+        keywords="contact bilan compétences, rendez-vous, Haguenau, Alsace, entretien gratuit"
+        canonical="https://bilancompetence.ai/contact"
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
-              Ücretsiz Ön Görüşme İçin İletişime Geçin
+              Contactez-nous pour un Entretien Préalable Gratuit
             </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Kariyer hedeflerinizi konuşmak, sorularınızı yanıtlamak ve size en
-              uygun bilan programını önermek için buradayız. Hiçbir bağlayıcılık
-              yok.
+            <p className="text-lead text-muted-foreground">
+              Nous sommes à votre écoute pour répondre à toutes vos questions et vous accompagner dans votre projet professionnel.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16">
+      {/* Contact Form & Info */}
+      <section className="py-16 md:py-24">
         <div className="container">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
             {/* Contact Form */}
             <div>
-              <h2 className="mb-6 font-serif text-3xl font-bold">
-                Mesaj Gönderin
-              </h2>
+              <h2 className="mb-6 font-serif text-3xl font-bold">Envoyez-nous un Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Adınız Soyadınız *
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium">
+                    Nom complet <span className="text-destructive">*</span>
                   </label>
                   <Input
                     id="name"
                     name="name"
                     type="text"
-                    required
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Jean Dupont"
+                    required
+                    disabled={sendContactMutation.isPending}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    E-posta Adresiniz *
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium">
+                    Email <span className="text-destructive">*</span>
                   </label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
-                    required
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="jean.dupont@example.com"
+                    required
+                    disabled={sendContactMutation.isPending}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="phone"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Telefon Numaranız
+                  <label htmlFor="phone" className="mb-2 block text-sm font-medium">
+                    Téléphone (optionnel)
                   </label>
                   <Input
                     id="phone"
@@ -107,120 +151,152 @@ export default function Contact() {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+33 6 12 34 56 78"
+                    placeholder="06 12 34 56 78"
+                    disabled={sendContactMutation.isPending}
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Mesajınız *
+                  <label htmlFor="subject" className="mb-2 block text-sm font-medium">
+                    Sujet <span className="text-destructive">*</span>
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Demande d'information sur le bilan de compétences"
+                    required
+                    disabled={sendContactMutation.isPending}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="mb-2 block text-sm font-medium">
+                    Message <span className="text-destructive">*</span>
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    required
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Kariyer hedefleriniz, sorularınız veya özel durumunuz hakkında bize kısaca bilgi verin..."
+                    placeholder="Décrivez votre projet professionnel et vos attentes..."
                     rows={6}
+                    required
+                    disabled={sendContactMutation.isPending}
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
-                  Mesajı Gönder
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full"
+                  disabled={sendContactMutation.isPending}
+                >
+                  {sendContactMutation.isPending ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Envoi en cours...
+                    </>
+                  ) : (
+                    "Envoyer le Message"
+                  )}
                 </Button>
               </form>
             </div>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="mb-6 font-serif text-3xl font-bold">
-                  İletişim Bilgileri
-                </h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-primary/10 p-3">
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">Adres</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {COMPANY_ADDRESS}
-                      </p>
-                    </div>
+            {/* Contact Info */}
+            <div>
+              <h2 className="mb-6 font-serif text-3xl font-bold">Nos Coordonnées</h2>
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <MapPin className="h-6 w-6" />
                   </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-primary/10 p-3">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">Telefon</h3>
-                      <a
-                        href={`tel:${COMPANY_PHONE.replace(/\s/g, "")}`}
-                        className="text-sm text-primary hover:underline"
-                      >
-                        {COMPANY_PHONE}
-                      </a>
-                    </div>
+                  <div>
+                    <h3 className="mb-2 font-semibold">Adresse</h3>
+                    <p className="text-muted-foreground">{COMPANY_ADDRESS}</p>
                   </div>
+                </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-primary/10 p-3">
-                      <Mail className="h-6 w-6 text-primary" />
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 font-semibold">Téléphone</h3>
+                    <a
+                      href={`tel:${COMPANY_PHONE}`}
+                      className="text-primary hover:underline"
+                    >
+                      {COMPANY_PHONE}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 font-semibold">Email</h3>
+                    <a
+                      href={`mailto:${COMPANY_EMAIL}`}
+                      className="text-primary hover:underline"
+                    >
+                      {COMPANY_EMAIL}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="rounded-lg bg-muted p-6">
+                  <h3 className="mb-3 font-semibold">Horaires d'Ouverture</h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex justify-between">
+                      <span>Lundi - Vendredi</span>
+                      <span className="font-medium">9h00 - 18h00</span>
                     </div>
-                    <div>
-                      <h3 className="mb-1 font-semibold">E-posta</h3>
-                      <a
-                        href={`mailto:${COMPANY_EMAIL}`}
-                        className="text-sm text-primary hover:underline"
-                      >
-                        {COMPANY_EMAIL}
-                      </a>
+                    <div className="flex justify-between">
+                      <span>Samedi</span>
+                      <span className="font-medium">Sur rendez-vous</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Dimanche</span>
+                      <span className="font-medium">Fermé</span>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="rounded-lg border bg-muted/30 p-6">
-                <h3 className="mb-3 font-serif text-xl font-semibold">
-                  Çalışma Saatleri
-                </h3>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex justify-between">
-                    <span>Pazartesi - Cuma:</span>
-                    <span className="font-medium text-foreground">
-                      09:00 - 18:00
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Cumartesi:</span>
-                    <span className="font-medium text-foreground">
-                      Sur rendez-vous
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Pazar:</span>
-                    <span className="font-medium text-foreground">Fermé</span>
-                  </div>
+                <div className="rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
+                  <h3 className="mb-3 font-semibold text-primary">Réponse Rapide</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Nous nous engageons à vous répondre sous <strong>24 heures ouvrées</strong>.
+                    Pour les demandes urgentes, n'hésitez pas à nous appeler directement.
+                  </p>
                 </div>
-              </div>
-
-              <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
-                <h3 className="mb-3 font-serif text-xl font-semibold">
-                  Hızlı Yanıt Garantisi
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Tüm mesajlarınıza <strong>48 saat içinde</strong> yanıt
-                  veriyoruz. Acil durumlar için lütfen doğrudan telefon ile
-                  iletişime geçin.
-                </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-br from-primary to-accent py-16 text-white">
+        <div className="container">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
+              Prêt à Donner un Nouvel Élan à Votre Carrière ?
+            </h2>
+            <p className="mb-8 text-lg opacity-90">
+              Planifiez un entretien préliminaire gratuit et sans engagement pour découvrir comment notre bilan de compétences peut vous aider.
+            </p>
+            <Button size="lg" variant="secondary" asChild>
+              <a href={`tel:${COMPANY_PHONE}`}>
+                <Phone className="mr-2 h-5 w-5" />
+                Appelez-nous Maintenant
+              </a>
+            </Button>
           </div>
         </div>
       </section>

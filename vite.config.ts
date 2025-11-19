@@ -6,10 +6,14 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
+
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
 
 export default defineConfig({
   plugins,
+  esbuild: {
+    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
+  },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -19,13 +23,37 @@ export default defineConfig({
   },
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
+  publicDir: path.resolve(import.meta.dirname, "client", "public"),
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
+          'router': ['wouter'],
+          'ui': ['lucide-react'],
+          'charts': ['recharts'],
+          'calendar': ['react-big-calendar'],
+          'markdown': ['streamdown'],
+        },
+        assetFileNames: (assetInfo) => {
+          // Hash CSS files for better caching
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'assets/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+    minify: 'esbuild',
+    cssMinify: true,
+    cssCodeSplit: true,
+    reportCompressedSize: false, // Faster builds
+    sourcemap: false, // Smaller production builds
   },
   server: {
-    port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
     host: true,
     allowedHosts: [
       ".manuspre.computer",

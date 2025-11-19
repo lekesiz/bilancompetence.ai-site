@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import CTA from "@/components/sections/CTA";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Streamdown } from "streamdown";
+import ArticleSchema from "@/components/ArticleSchema";
+import SEOHead from "@/components/SEOHead";
 
 export default function BlogPost() {
   const [, params] = useRoute("/blog/:slug");
@@ -27,8 +29,57 @@ export default function BlogPost() {
     );
   }
 
+  const currentUrl = `https://bilancompetence.ai/blog/${post.slug}`;
+  
+  // Safe date parsing with fallback
+  const parseFrenchDate = (dateStr: string): string => {
+    try {
+      // Try parsing as ISO date first
+      const isoDate = new Date(dateStr);
+      if (!isNaN(isoDate.getTime())) {
+        return isoDate.toISOString().split('T')[0];
+      }
+      
+      // Parse French format: "5 décembre 2025"
+      const months: Record<string, string> = {
+        'janvier': '01', 'février': '02', 'mars': '03', 'avril': '04',
+        'mai': '05', 'juin': '06', 'juillet': '07', 'août': '08',
+        'septembre': '09', 'octobre': '10', 'novembre': '11', 'décembre': '12'
+      };
+      
+      const match = dateStr.match(/(\d+)\s+(\w+)\s+(\d{4})/);
+      if (match) {
+        const [, day, month, year] = match;
+        const monthNum = months[month.toLowerCase()];
+        if (monthNum) {
+          return `${year}-${monthNum}-${day.padStart(2, '0')}`;
+        }
+      }
+      
+      // Fallback to current date
+      return new Date().toISOString().split('T')[0];
+    } catch {
+      return new Date().toISOString().split('T')[0];
+    }
+  };
+  
+  const datePublished = parseFrenchDate(post.date);
+
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={`${post.title} - bilancompetence.ai`}
+        description={post.excerpt}
+        canonical={currentUrl}
+      />
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        author={post.author}
+        datePublished={datePublished}
+        image={post.image}
+        url={currentUrl}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16">
         <div className="container">
@@ -42,7 +93,7 @@ export default function BlogPost() {
             </Button>
 
             {/* Category */}
-            <div className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            <div className="mb-4 inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
               {post.category}
             </div>
 
@@ -76,6 +127,9 @@ export default function BlogPost() {
                 src={post.image}
                 alt={post.title}
                 className="h-full w-full object-cover"
+                width="1200"
+                height="675"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -108,12 +162,15 @@ export default function BlogPost() {
                     href={`/blog/${relatedPost.slug}`}
                     className="group"
                   >
-                    <article className="overflow-hidden rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md">
+                    <article className="overflow-hidden rounded-lg border bg-card card-hover-subtle text-card-foreground shadow-soft transition-all hover:shadow-medium">
                       <div className="aspect-video overflow-hidden">
                         <img
                           src={relatedPost.image}
                           alt={relatedPost.title}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                          loading="lazy"
+                          width="800"
+                          height="450"
                         />
                       </div>
                       <div className="p-4">

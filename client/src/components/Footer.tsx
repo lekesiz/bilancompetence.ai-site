@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import {
   COMPANY_NAME,
   COMPANY_PHONE,
@@ -40,7 +41,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/methodologie"
+                  href="/bilan-de-competences/methodologie"
                   className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Méthodologie
@@ -48,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/expertise-alsace"
+                  href="/bilan-de-competences/expertise-alsace"
                   className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Expertise Locale (Alsace)
@@ -56,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/bilan-de-competences/recherche"
+                  href="/bilan-de-competences/fondements-academiques"
                   className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Fondements Académiques
@@ -170,6 +171,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link
+                  href="/sitemap"
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Plan du Site
+                </Link>
+              </li>
+              <li>
                 <span className="inline-flex items-center gap-1 text-muted-foreground">
                   <span className="text-xs font-semibold text-primary">✓</span>
                   Certifié Qualiopi
@@ -210,6 +219,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
+                aria-label="Suivez-nous sur LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -218,6 +228,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
+                aria-label="Suivez-nous sur X (Twitter)"
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -226,6 +237,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
+                aria-label="Suivez-nous sur Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -260,6 +272,11 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="mx-auto mt-12 max-w-md">
+          <NewsletterForm variant="compact" className="" />
         </div>
 
         {/* Bottom Bar */}

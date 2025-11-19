@@ -1,8 +1,10 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import CTA from "@/components/sections/CTA";
 import { CheckCircle2, Euro, Clock, Shield } from "lucide-react";
 import { CPF_LINK } from "@/const";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function FinancementCPF() {
   const steps = [
@@ -55,11 +57,18 @@ export default function FinancementCPF() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Financement CPF : Bilan de Compétences 100% Pris en Charge"
+        description="Utilisez votre CPF pour financer votre bilan de compétences. Guide 2025 : éligibilité, démarches Mon Compte Formation. 100% pris en charge sans avance."
+        keywords="CPF bilan de compétences, Mon Compte Formation, financement CPF, compte personnel formation, prise en charge"
+        canonical="https://bilancompetence.ai/financement/cpf"
+      />
+      <Breadcrumbs items={[{ label: "Financement", href: "/financement/cpf" }, { label: "CPF" }]} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-accent/5 py-16 md:py-24">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent-foreground">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground">
               <Euro className="h-4 w-4" />
               <span>Financement Public</span>
             </div>
@@ -67,7 +76,7 @@ export default function FinancementCPF() {
               Financez Votre Bilan à 100% avec le{" "}
               <span className="gradient-text">CPF</span>
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+            <p className="mb-8 text-lead text-muted-foreground">
               Le Compte Personnel de Formation (CPF) est votre droit. Utilisez-le
               pour investir dans votre carrière sans dépenser un centime de votre
               poche.
@@ -120,7 +129,7 @@ export default function FinancementCPF() {
                   return (
                     <div
                       key={index}
-                      className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm"
+                      className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft"
                     >
                       <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                         <Icon className="h-6 w-6 text-primary" />
@@ -146,7 +155,7 @@ export default function FinancementCPF() {
                 {steps.map((step, index) => (
                   <div
                     key={index}
-                    className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm md:p-8"
+                    className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft md:p-8"
                   >
                     <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
                       <div className="flex-shrink-0">

@@ -1,52 +1,61 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 import CTA from "@/components/sections/CTA";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { CheckCircle2, Users, FileText, TrendingUp } from "lucide-react";
 
 export default function BilanDefinition() {
   const benefits = [
-    "Mevcut yetkinliklerinizi ve potansiyelinizi objektif bir şekilde değerlendirin",
-    "Kariyer hedeflerinizi netleştirin ve gerçekçi bir plan oluşturun",
-    "Meslek değişikliği, terfi veya yeniden yönelme kararlarınızı sağlam temellere dayandırın",
-    "Motivasyonlarınızı, değerlerinizi ve kişiliğinizi derinlemesine anlayın",
-    "İş piyasasındaki fırsatları ve size uygun sektörleri keşfedin",
+    "Évaluez objectivement vos compétences actuelles et votre potentiel",
+    "Clarifiez vos objectifs de carrière et établissez un plan réaliste",
+    "Fondez vos décisions de changement de métier, de promotion ou de réorientation sur des bases solides",
+    "Comprenez en profondeur vos motivations, vos valeurs et votre personnalité",
+    "Découvrez les opportunités du marché du travail et les secteurs qui vous correspondent",
   ];
 
   const whoIsItFor = [
     {
       icon: Users,
-      title: "Maaşlı Çalışanlar",
+      title: "Salariés",
       description:
-        "Kariyerinde yeni bir yön arayan, terfi hedefleyen veya şirket içi mobilitesini planlayan profesyoneller.",
+        "Professionnels cherchant une nouvelle direction dans leur carrière, visant une promotion ou planifiant une mobilité interne.",
     },
     {
       icon: FileText,
-      title: "İş Arayanlar",
+      title: "Demandeurs d'Emploi",
       description:
-        "İşe dönüş sürecinde doğru hedefi belirlemek ve rekabette öne çıkmak isteyen adaylar.",
+        "Candidats souhaitant définir le bon objectif lors de leur retour à l'emploi et se démarquer dans la compétition.",
     },
     {
       icon: TrendingUp,
-      title: "Girişimciler ve Serbest Çalışanlar",
+      title: "Entrepreneurs et Indépendants",
       description:
-        "Yeni bir iş fikri geliştiren veya mevcut faaliyetlerini yeniden değerlendiren profesyoneller.",
+        "Professionnels développant une nouvelle idée d'entreprise ou réévaluant leurs activités actuelles.",
     },
   ];
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Qu'est-ce qu'un Bilan de Compétences ? | Définition et Cadre Légal"
+        description="Découvrez la définition complète du bilan de compétences, son cadre légal, ses bénéfices et pour qui il est destiné. Certifié Qualiopi, finançable CPF."
+        keywords="bilan de compétences définition, cadre légal, article L6313-10, CPF, Qualiopi, reconversion professionnelle"
+        canonical="https://bilancompetence.ai/bilan-de-competences/definition"
+      />
+      <Breadcrumbs items={[
+        { label: "Bilan de Compétences", href: "/bilan-de-competences/definition" },
+        { label: "Définition" }
+      ]} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-6 font-serif text-4xl font-bold md:text-5xl lg:text-6xl">
-              Bilan de Compétences Nedir?
+              Qu'est-ce qu'un Bilan de Compétences ?
             </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Fransız iş hukuku tarafından tanımlanmış, devlet destekli bir
-              kariyer gelişim hizmeti. Yeteneklerinizi keşfetmek, kariyer
-              hedeflerinizi netleştirmek ve profesyonel geleceğinizi
-              şekillendirmek için bilimsel bir süreç.
+            <p className="text-lead text-muted-foreground">
+              Un service de développement de carrière soutenu par l'État, défini par le droit du travail français. Un processus scientifique pour découvrir vos talents, clarifier vos objectifs de carrière et façonner votre avenir professionnel.
             </p>
           </div>
         </div>
@@ -59,24 +68,14 @@ export default function BilanDefinition() {
             {/* Definition */}
             <div>
               <h2 className="mb-4 font-serif text-3xl font-bold">
-                Yasal Tanım ve Çerçeve
+                Définition Légale et Cadre
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Bilan de compétences, 1991 yılından beri Fransız İş Kanunu'nda
-                  (Code du Travail, Article L6313-1) yer alan bir haktır. Bu
-                  süreç, bir bireyin profesyonel ve kişisel yetkinliklerini,
-                  yeteneklerini ve motivasyonlarını analiz etmek amacıyla
-                  tasarlanmış, toplam <strong>24 saatlik</strong> yapılandırılmış
-                  bir danışmanlık hizmetidir.
+                  Le bilan de compétences est un droit inscrit dans le Code du Travail français (Article L6313-1) depuis 1991. Ce processus est conçu pour analyser les compétences professionnelles et personnelles, les aptitudes et les motivations d'un individu. Il s'agit d'un service de conseil structuré de <strong>24 heures</strong> au total.
                 </p>
                 <p>
-                  Bilan, sadece bir test veya değerlendirme değildir. Aksine,
-                  sertifikalı bir danışmanla birebir çalışarak, kariyerinizin
-                  geçmişini, bugününü ve geleceğini derinlemesine inceleyen bir
-                  yolculuktur. Sonunda, size özel bir{" "}
-                  <strong>sentez dokümanı</strong> ve somut bir{" "}
-                  <strong>eylem planı</strong> ile donatılırsınız.
+                  Le bilan n'est pas simplement un test ou une évaluation. Au contraire, c'est un voyage au cours duquel vous travaillez en tête-à-tête avec un consultant certifié pour examiner en profondeur le passé, le présent et l'avenir de votre carrière. À la fin, vous recevez un <strong>document de synthèse</strong> personnalisé et un <strong>plan d'action</strong> concret.
                 </p>
               </div>
             </div>
@@ -84,7 +83,7 @@ export default function BilanDefinition() {
             {/* Benefits */}
             <div>
               <h2 className="mb-6 font-serif text-3xl font-bold">
-                Bir Bilan de Compétences Size Ne Kazandırır?
+                Qu'est-ce qu'un Bilan de Compétences Vous Apporte ?
               </h2>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
@@ -99,7 +98,7 @@ export default function BilanDefinition() {
             {/* Who is it for */}
             <div>
               <h2 className="mb-6 font-serif text-3xl font-bold">
-                Bilan de Compétences Kimin İçin?
+                Pour Qui est le Bilan de Compétences ?
               </h2>
               <div className="grid gap-6 md:grid-cols-3">
                 {whoIsItFor.map((item, index) => {
@@ -107,7 +106,7 @@ export default function BilanDefinition() {
                   return (
                     <div
                       key={index}
-                      className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm"
+                      className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft"
                     >
                       <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3">
                         <Icon className="h-6 w-6 text-primary" />
@@ -127,35 +126,29 @@ export default function BilanDefinition() {
             {/* Confidentiality */}
             <div className="rounded-lg border bg-muted/30 p-8">
               <h3 className="mb-4 font-serif text-2xl font-semibold">
-                Gizlilik ve Bağımsızlık Garantisi
+                Garantie de Confidentialité et d'Indépendance
               </h3>
               <p className="text-muted-foreground">
-                Bilan sürecinin sonuçları tamamen <strong>gizlidir</strong> ve
-                sadece size aittir. İşvereniniz, Pôle Emploi veya başka bir kurum,
-                sizin izniniz olmadan bilan içeriğinize veya sentez dokümanınıza
-                erişemez. Bu, size tam bir özgürlük ve dürüstlük ortamı sağlar.
-                Danışmanınızla paylaştığınız her şey, profesyonel gizlilik
-                kurallarıyla korunur.
+                Les résultats du processus de bilan sont entièrement <strong>confidentiels</strong> et vous appartiennent exclusivement. Votre employeur, Pôle Emploi ou toute autre institution ne peut accéder au contenu de votre bilan ou à votre document de synthèse sans votre autorisation. Cela vous offre un environnement de liberté et d'honnêteté totales. Tout ce que vous partagez avec votre consultant est protégé par les règles de confidentialité professionnelle.
               </p>
             </div>
 
             {/* Next Steps */}
             <div className="text-center">
               <h3 className="mb-4 font-serif text-2xl font-semibold">
-                Sonraki Adımlar
+                Prochaines Étapes
               </h3>
               <p className="mb-6 text-muted-foreground">
-                Bilan de compétences'in nasıl çalıştığını öğrendiniz. Şimdi,
-                bizim yaklaşımımızın sizi nasıl farklılaştıracağını keşfedin.
+                Vous avez découvert comment fonctionne le bilan de compétences. Maintenant, découvrez comment notre approche vous différenciera.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Button asChild size="lg">
                   <Link href="/bilan-de-competences/approche-ia">
-                    Yapay Zeka Yaklaşımımız
+                    Notre Approche IA
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/methodologie">Metodolojimiz</Link>
+                  <Link href="/bilan-de-competences/methodologie">Notre Méthodologie</Link>
                 </Button>
               </div>
             </div>

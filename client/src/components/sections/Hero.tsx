@@ -14,7 +14,7 @@ export default function Hero() {
           </h1>
 
           {/* Subheading */}
-          <p className="mb-8 text-lg text-muted-foreground md:text-xl">
+          <p className="mb-8 text-lead text-muted-foreground">
             Révélez vos talents cachés, exploitez votre plein potentiel et
             tracez votre parcours professionnel idéal grâce à une méthodologie
             scientifique et une expertise locale reconnue.
@@ -39,7 +39,7 @@ export default function Hero() {
 
           {/* Value Propositions */}
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-shadow hover:shadow-md">
+            <div className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft transition-shadow hover:shadow-medium">
               <div className="mb-4 flex justify-center">
                 <div className="rounded-full bg-primary/10 p-3">
                   <Brain className="h-8 w-8 text-primary" />
@@ -54,7 +54,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-shadow hover:shadow-md">
+            <div className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft transition-shadow hover:shadow-medium">
               <div className="mb-4 flex justify-center">
                 <div className="rounded-full bg-secondary/10 p-3">
                   <Users className="h-8 w-8 text-secondary" />
@@ -69,7 +69,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm transition-shadow hover:shadow-md">
+            <div className="rounded-lg border bg-card card-hover-subtle p-6 text-card-foreground shadow-soft transition-shadow hover:shadow-medium">
               <div className="mb-4 flex justify-center">
                 <div className="rounded-full bg-accent/10 p-3">
                   <Euro className="h-8 w-8 text-accent-foreground" />
