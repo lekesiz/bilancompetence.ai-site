@@ -57,6 +57,8 @@ export default function AutresAides() {
         "Votre employeur dépose la demande de prise en charge",
         "L'OPCO valide et finance tout ou partie du bilan",
       ],
+      link: "https://monopco.fr/",
+      linkText: "Pour les demandes professionnelles et entreprises, visitez notre plateforme dédiée",
     },
   ];
 
@@ -153,6 +155,24 @@ export default function AutresAides() {
                           </li>
                         ))}
                       </ol>
+                      {option.link && (
+                        <div className="mt-4 rounded-lg bg-primary/5 p-4 border border-primary/20">
+                          <p className="text-sm text-muted-foreground mb-2">
+                            {option.linkText}
+                          </p>
+                          <a
+                            href={option.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline font-medium flex items-center gap-1"
+                          >
+                            monopco.fr
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
